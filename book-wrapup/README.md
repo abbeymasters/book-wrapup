@@ -1,5 +1,5 @@
 # Abbey & Allison's Top 5 Books App
-## An app to save and share your top books of the year. 
+An app to save and share your top books of the year. 
 
 ## Available Scripts
 
