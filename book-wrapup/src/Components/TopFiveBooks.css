@@ -1,0 +1,11 @@
+.TopFiveBooksSection {
+    background-color: #ffc0cb;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10%;
+    padding-Bottom: 10%;
+}
+
+button {
+    width: 10%;
+}
