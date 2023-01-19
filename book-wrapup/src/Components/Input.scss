@@ -1,3 +1,8 @@
+.inputSection {
+  display: flex;
+  flex-direction: column;
+}
+
 input {
     background: 0;
     border: none;
@@ -21,9 +26,9 @@ input {
     }
   }
   
-  fieldset {
+  form {
     position: relative;
-    border: 2px solid white;
+    border: 2px solid  #00634d;
     border-radius: 20px;
     padding: 2em;
   
