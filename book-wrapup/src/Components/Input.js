@@ -7,6 +7,7 @@ const Input = () => {
     const [search, setSearch] = useState("");
     const [updated, setUpdated] = useState("");
     const [results, setResults] = useState([])
+    const [selectedBook, setSelectedBook] = useState({})
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,33 +27,35 @@ const Input = () => {
           }
     }
 
+    const addFavorite = (book) => {
+        setSelectedBook(book)
+    }
+
     const bookOptions = results.data?.items.map(o => {
         return(
-            <>
+            <li key={o.id}>
+                <img src={o.volumeInfo.imageLinks.smallThumbnail} alt={o.id} />
                 <h1>{o.volumeInfo.title}</h1>
-                <img src={o.volumeInfo.imageLinks.smallThumbnail} />
-            </>
+                <button onClick={() => addFavorite(o)}>+</button>
+            </li>
         )
     })
-
-    
 
     return(
         <section className="inputSection">
             <form onSubmit={handleSubmit}
-                onChange={handleChange} 
-            >
+                onChange={handleChange} >
                 <input 
                     type="text" 
                     placeholder="Search your favorite book..."
                     onKeyDown={handleKeyDown}
                 ></input>
                 <div className="line"></div>
-            </form>
-
-            <ul>
+            <ul className="bookOptionsSection">
                 {bookOptions}
             </ul>
+            </form>
+
         </section>
     )
 }
